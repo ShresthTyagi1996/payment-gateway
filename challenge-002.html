@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Payment Gateway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Overpass", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #FFEA7B;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .add-credit-card-details {
+        width: 20%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    h1 {
+        font-size: 32px;
+        color: #7E1F86;
+        margin: 0 0 10px;
+    }
+    p {
+        font-size: 13px;
+        margin: 0 0 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        font-size: 16px;
+        margin: 0 0 5px;
+        color: #515250d8;
+    }
+    input {
+        padding: 10px;
+        margin: 0 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .button-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    button img {
+        width: 50px;
+    }
+    button img:hover {
+        cursor: pointer;
+    }
+    input[type="checkbox"] {
+        margin: 0 0 10px;
+    }
+    button[type="submit"] {
+        padding: 10px;
+        margin: 0 0 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #9D79BC;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button[type="submit"]:hover {
+        background-color: #6a11cb;
+    }
+    .expiry, .cvv {
+        display: flex;
+        flex-direction: column;
+    }
+    .gradient-border-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    .gradient-border-button:hover {
+        cursor: pointer;
+        border: 2px solid #6a11cb;
+    }
+
+    .cvv > input {
+        width: 70px;
+    }
+    
+    input[type="checkbox"] {
+        width: 10px;
+        height: 10px;
+        appearance: none;
+        border: 2px solid #6a11cb;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: #6a11cb;
+        border-color: #6a11cb;
+        background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='%23fff' d='M6.173 13.785L.434 8.09l1.218-1.227 4.53 4.496L14.35 2.214l1.216 1.23-9.394 10.34z'/></svg>");
+        background-size: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<body>
+    <div class="add-credit-card-details">
+        <h1>You're almost done!</h1>
+        <p>Provide your credit card information to complete your purchase</p>
+        <form action="#">
+            <label for="payment-method">Payment Method</label>
+            <div class="button-flex">
+                <button class="gradient-border-button"><img src="./mastercard.jpg" alt="mastercard"></button>
+                <button class="gradient-border-button"><img src="./Paypal.png" alt="paypal"></button>
+                <button class="gradient-border-button"><img src="./visa.png" alt="visa"></button>
+            </div>
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" placeholder="1111 2222 3333 4444">
+            <label for="card-holder">Card Holder's Name</label>
+            <input type="text" id="card-holder" name="card-holder" placeholder="John Doe">
+            <div class="grid">
+                <div class="expiry">
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+                </div>
+                <div class="cvv">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" name="cvv" placeholder="123">
+                </div>
+            </div>
+            <div class="save-card">
+                <input type="checkbox" id="save-card" name="save-card">
+                <label for="save-card">Save this card for future purchases</label>
+            </div>
+            <button type="submit">Checkout</button>
+        </form>
+    </div>
+</body>
+</html>
